@@ -1,9 +1,9 @@
 {
   "name": "quantr-desktop",
-  "version": "1.0.0",
-  "description": "QUANTR — IFC & PDF takeoff for UK quantity surveyors (desktop app)",
+  "version": "1.0.2",
+  "description": "USEQUANTR \u2014 PDF & IFC markup, takeoff and measurement (desktop app)",
   "main": "main.js",
-  "author": "QUANTR",
+  "author": "USEQUANTR",
   "license": "UNLICENSED",
   "scripts": {
     "start": "electron .",
@@ -16,7 +16,7 @@
   },
   "build": {
     "appId": "io.usequantr.desktop",
-    "productName": "QUANTR",
+    "productName": "USEQUANTR",
     "directories": {
       "output": "dist"
     },
@@ -27,16 +27,25 @@
     ],
     "win": {
       "target": [
-        { "target": "nsis", "arch": ["x64"] }
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
       ],
-      "icon": "build/icon.ico"
+      "icon": "build/icon.ico",
+      "artifactName": "USEQUANTR-Setup.${ext}"
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "QUANTR"
-    }
+      "shortcutName": "USEQUANTR",
+      "artifactName": "USEQUANTR-Setup.${ext}",
+      "uninstallDisplayName": "USEQUANTR"
+    },
+    "executableName": "USEQUANTR"
   }
 }
